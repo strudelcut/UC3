@@ -1,0 +1,4 @@
+Arroz, 20
+Feijão, 15
+Açúcar, 10
+Ovos, 5

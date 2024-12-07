@@ -51,20 +51,20 @@ class Produto:
     def vender(self, quantidade: int):
         if(quantidade <= self.estoque):
             self.estoque -= quantidade
-            print(f"Vendido {quantidade} unidade(s)")
+            print(f"\nVendido {quantidade} unidade(s)\n")
         else:
             print("Estoque insuficiente")
    
     def repor(self, quantidade: int):
         self.estoque += quantidade
-        print(f"Adicionado {quantidade} unidade(s)")
+        print(f"\nAdicionado {quantidade} unidade(s)\n")
 
 
 #Exemplo de uso
 produto = Produto("Caneta", 2.50, 100)
 produto.vender(10)
 produto.repor(20)
-print(f"Estoque atual: {produto.estoque}")
+print(f"\nEstoque atual: {produto.estoque} unidade(s)\n")
 
 
 

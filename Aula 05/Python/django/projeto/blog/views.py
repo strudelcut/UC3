@@ -9,3 +9,7 @@ def blog(request):
 
 def artigo(request):
     return render(request, 'blog/artigo.html')
+
+def doc(request):
+    print(request,"Passei pelo doc")
+    return render(request, 'blog/doc.html')

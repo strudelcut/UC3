@@ -26,9 +26,10 @@ urlpatterns = [
     path('principal/', views_principal.principal),
     path('', views_principal.principal),
     path('local/', views_local.local),
+    path('local/ondeestamos/', views_local.ondeestamos),
     path('outros/', views_outros.outros),
-    path('atividades/', views_outros.atividades),
+    path('outros/atividades/', views_outros.atividades),
     path('sobre/', views_sobre.sobre),
-    path('produtos/', views_sobre.produtos),
-    path('servicos/', views_sobre.servicos),
+    path('sobre/produtos/', views_sobre.produtos),
+    path('sobre/servicos/', views_sobre.servicos),
 ]

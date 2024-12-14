@@ -1,0 +1,17 @@
+{% include "global/partials/head.html" %}
+<body class="d-flex flex-column min-vh-100">
+    {% include "global/partials/menu.html" %}
+    <main class="flex-grow-1">
+
+        
+        {% block texto %}
+            
+        {% endblock texto %}
+        
+        
+    </main>
+    {% include "global/partials/footer.html" %}
+    {% include "global/partials/modal.html" %}
+    {% include "global/partials/script.html" %}
+</body>
+</html>

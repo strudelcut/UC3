@@ -4,4 +4,4 @@ from django.shortcuts import render
 a = {'title': 'Home - Blog'}
 
 def home(request):
-    return render(request, 'global/base.html', a)
+    return render(request, 'home/index.html', a)

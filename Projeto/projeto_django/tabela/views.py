@@ -4,4 +4,4 @@ from django.shortcuts import render
 a = {'title': 'Tabela'}
 
 def tabela(request):
-    return render(request, 'tabela.html', a)
+    return render(request, 'tabela/index.html', a)

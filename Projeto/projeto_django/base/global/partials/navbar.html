@@ -1,7 +1,7 @@
 <nav class="container mb-2 shadow-lg bg-warning-subtle sticky-top">
     <nav class="navbar navbar-expand-lg">
         <nav class="container-fluid">
-            <a href="index.html" class="navbar-brand" style="color:crimson;"><i
+            <a href="{% url 'home' %}" class="navbar-brand" style="color:crimson;"><i
                     class="bi bi-pc-display-horizontal fs-3 me-3"></i>Projeto UC-2</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="color:crimson;">
@@ -10,25 +10,25 @@
             <nav class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a href="index.html#introducao" class="nav-link">Introdução</a>
+                        <a href="{% url 'home' %}#introducao" class="nav-link">Introdução</a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.html#historia" class="nav-link">História</a>
+                        <a href="{% url 'home' %}#historia" class="nav-link">História</a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.html#evolucao" class="nav-link">Evolução</a>
+                        <a href="{% url 'home' %}#evolucao" class="nav-link">Evolução</a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.html#mercado" class="nav-link">Mercado Atual</a>
+                        <a href="{% url 'home' %}#mercado" class="nav-link">Mercado Atual</a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.html#conclusao" class="nav-link">Conclusão</a>
+                        <a href="{% url 'home' %}#conclusao" class="nav-link">Conclusão</a>
                     </li>
                     <li class="nav-item">
-                        <a href="tabela.html" target="_blank" class="nav-link">Tabela</a>
+                        <a href="{% url 'tabela' %}" target="_blank" class="nav-link">Tabela</a>
                     </li>
                     <li class="nav-item">
-                        <a href="carrossel.html" target="_blank" class="nav-link">Carrossel e Card</a>
+                        <a href="{% url 'car' %}" target="_blank" class="nav-link">Carrossel e Card</a>
                     </li>
                 </ul>
             </nav>

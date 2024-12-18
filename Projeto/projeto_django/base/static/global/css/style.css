@@ -1,14 +1,28 @@
+footer, header {
+    margin-inline: 292px;
+    padding: 20px;
+    background-color: midnightblue;
+    color: whitesmoke;
+}
+
+header {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+footer p {
+    text-align: right;
+}
+
 table {
     text-align: center;
     margin: 0 auto;
     border: 2px solid black;
 }
 
-th,
-td {
+/* th, td, tr {
     border: 1px solid gray;
     padding: 25px;
-}
+} */
 
 h5 {
     text-align: center;

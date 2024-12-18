@@ -22,5 +22,5 @@ urlpatterns = [
     path('', include('home.urls')),
     path('home/', include('home.urls')),
     path('tabela/', include('tabela.urls')),
-    path('carrossel/', include('carrossel.urls')),
+    path('car/', include('car.urls')),
 ]

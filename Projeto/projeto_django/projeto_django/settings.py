@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'home',
     'tabela',
     'car',
+    'homev2',
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,198 @@
+{% extends "global/basev2.html" %}
+{% block texto %}
+<style>
+    table {
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 50px;
+        font-weight: 700;
+    }
+
+    th,
+    td {
+        border: 1px solid gray;
+        padding: 25px;
+    }
+
+    tr:hover {
+        background-color: #f2f2f23a;
+    }
+</style>
+
+<main class="main">
+
+    <!-- Hero Section -->
+    <section id="Tabela" class="hero section dark-background">
+
+        <img src="/static/global/img/circuit-board.jpg" alt="" data-aos="fade-in">
+
+        <div class="container">
+
+            <div class="row justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
+                <div class="col">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Soquete</th>
+                                <th>Arquitetura</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>LGA-1155</td>
+                                <td>Sandy Bridge (2ª geração, 32nm, 2k-series) e Ivy Bridge (3ª geração, 22nm,
+                                    3k-series).</td>
+                            </tr>
+                            <tr>
+                                <td>LGA-1150</td>
+                                <td>Haswell (4ª geração, 22nm, 4k-series) e Broadwell (5ª geração, 14nm, 5k-series).
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>LGA-1151</td>
+                                <td>Skylake (6ª geração, 14nm, 6k-series), Kabylake (7ª geração, 14nm, 7k-series) e
+                                    Coffeelake
+                                    (8ª
+                                    geração, 14nm, 8k-series e 9ª geração, 14nm, 9k-series)*.</td>
+                            </tr>
+                            <tr>
+                                <td>LGA-1200</td>
+                                <td>Comet Lake (10ª geração, 10nm, 10k-series) e Rocket Lake (11ª geração, 14nm,
+                                    11k-series)**.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>LGA-1700</td>
+                                <td>Alder Lake (12ª geração, 10nm, 12k-series) e Raptor Lake (13ª geração, 10nm,
+                                    13k-series e
+                                    14ºa
+                                    geração, 10nm, 14k-series)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h5>*Embora os processadores de desktop Coffee Lake usem o mesmo soquete físico, LGA 1151, que o
+                        Skylake e o
+                        Kaby Lake, a pinagem é eletricamente incompatível com esses processadores, pois eles usam
+                        placas-mãe com
+                        chipset da series 100 e 200.</h5>
+                    <h5>**O Rocket Lake conta com o mesmo soquete LGA 1200 e compatibilidade com chipset série 400 do
+                        Comet
+                        Lake, exceto pelos chipsets H410 e B460.</h5>
+                </div>
+            </div>
+        </div>
+    </section><!-- /Hero Section -->
+
+    <section id="carrossel" class="d-flex justify-content-center dark-background">
+        <div id="carouselExampleCaptions" style="max-width: 540px;" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+                    aria-label="Slide 0"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/static/global/img/intel_1155.jpeg" class="img-fluid d-block w-100" alt="LGA-1155">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 class="badge text-bg-light text-wrap" style="width: 6rem;">LGA-1155</h5>
+
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/static/global/img/intel_1151.jpg" class="d-block w-100" alt="LGA-1151">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 class="badge text-bg-light text-wrap" style="width: 6rem;">LGA-1151</h5>
+
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/static/global/img/intel_1150.jpg" class="d-block w-100" alt="LGA-1150">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 class="badge text-bg-light text-wrap" style="width: 6rem;">LGA-1150</h5>
+
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/static/global/img/intel_1200.jpg" class="d-block w-100" alt="LGA-1200">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 class="badge text-bg-light text-wrap" style="width: 6rem;">LGA-1200</h5>
+
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/static/global/img/intel_1700.jpg" class="d-block w-100" alt="LGA-1700">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 class="badge text-bg-light text-wrap" style="width: 6rem;">LGA-1700</h5>
+
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+    </section>
+
+    <section class="dark-background">
+        <div class="container">
+            <div id="cartoes" class="row g-5">
+                <div class="col-xl-6 px-5">
+                    <div class="card text-bg-dark" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="/static/global/img/socket_am4.jpg" class="img-fluid rounded-start" alt="AM4">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Soquete AM4</h5>
+                                    <p class="card-text">AM4 é um socket de microprocessador do padrão PGA usado pela AMD em
+                                        unidades centrais de processamento (CPUs) construído para microarquiteturas Zen
+                                        (incluindo Zen +, Zen 2 e Zen 3) e Excavator.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 px-5">
+                    <div class="card text-bg-dark" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="/static/global/img/amd_am5.png" class="img-fluid rounded-start" alt="AM5">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Soquete AM5</h5>
+                                    <p class="card-text">Socket AM5 (LGA 1718) é um soquete de CPU flip chip land grid array
+                                        (LGA) de forçade inserção zero projetado pela Advanced Micro Devices, que é usado
+                                        para
+                                        microprocessadores AMD Ryzen começando com a microarquitetura Zen 4. AM5 substitui o
+                                        socket AM4 e é o primeiro soquete LGA da AMD projetado para CPUs comuns e não
+                                        entusiastas</p>
+        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    
+</main>
+{% endblock texto %}

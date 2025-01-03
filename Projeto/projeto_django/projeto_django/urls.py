@@ -24,5 +24,4 @@ urlpatterns = [
     path('tabela/', include('tabela.urls')),
     path('car/', include('car.urls')),
     path('homev2/', include('homev2.urls')),
-    path('homev2/soquetes/', include('homev2.urls')),
 ]

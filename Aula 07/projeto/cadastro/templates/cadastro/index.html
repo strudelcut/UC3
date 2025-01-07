@@ -1,48 +1,21 @@
 {% extends "global/base.html" %}
 
-{% block texto %}
-<article class="container mb-5">
+{% block formulario %}
+  <div class="container">
+    <h1>Cadastrar Contato</h1>
+    <form action="{% url 'gravar' %}" method="post">
+      {% csrf_token %}
+      <label for="nome">Nome</label>
+      <input type="text" name="nome" class="form-control">
+      <label for="idade">Idade</label>
+      <input type="number" name="idade" class="form-control">
+      <label for="email">Email</label>
+      <input type="email" name="email" class="form-control">
+      <label for="telefone">Telefone</label>
+      <hr>
+      <button class="btn btn-primary">Enviar</button>
 
-    <form method="POST" action="" name="form_cadastrousuario">
-      <label for="nomecompleto">Nome Completo</label>
-      <input type="text" class="form-control" name="nomecompleto" required>
-
-      <label for="email">E-mail</label>
-      <input type="email" class="form-control" name="email" required>
-
-      <label for="senha">Senha</label>
-      <input type="password" class="form-control" name="senha">
-
-      <label for="sexo">Sexo</label>
-      <input type="radio" name="sexo" value="Feminino">Feminino
-      <input type="radio" name="sexo" value="Masculino">Masculino
-      <br>
-      <label for="conhecimentos">Conhecimentos</label>
-      <input type="checkbox" name="word" value="word">Word
-      <input type="checkbox" name="excel" value="excel">Excel
-
-      <br>
-      <label for="cep">Cep:
-        <input class="form-control" name="cep" type="text" id="cep" value="" size="10" maxlength="9"
-          onblur="pesquisacep(this.value);" /></label><br />
-      <label for="rua">Rua:
-        <input class="form-control" name="rua" type="text" id="rua" size="60" /></label>
-      <label for="numero">Numero:
-        <input class="form-control" name="numero" type="number" /></label>
-      <label for="complemento">Complemento:
-        <input class="form-control" name="complemento" type="complemento" /></label><br />
-      <label for="bairro">Bairro:
-        <input class="form-control" name="bairro" type="text" id="bairro" size="40" /></label><br />
-      <label for="cidade">Cidade:
-        <input class="form-control" name="cidade" type="text" id="cidade" size="40" /></label><br />
-      <label for="uf">Estado:
-        <input class="form-control" name="uf" type="text" id="uf" size="2" /></label><br />
-      <hidden name="ibge" type="text" id="ibge" size="8" /></label><br />
-
-      <input type="submit" name="cadastrarusuario" value="Cadastrar">
-      <br>
-      <br>
     </form>
 
-  </article>
-{% endblock texto %}
+  </div>
+{% endblock formulario %}

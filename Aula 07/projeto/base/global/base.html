@@ -7,7 +7,18 @@
         {% block texto %}
             
         {% endblock texto %}
+
+        <section class="bg-info">
+            {% block painel %}
+            
+            {% endblock painel %}
+
+        </section>
         
+        <article class="container bg-secondary">
+            {% block formulario %} {% endblock formulario %}
+
+        </article>
         
     </main>
     {% include "global/partials/footer.html" %}

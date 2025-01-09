@@ -2,12 +2,9 @@
 
     <nav class="navbar  navbar-expand-lg">
       <div class="container">
-        <a class="navbar-brand" href="#">
-          <img src="/static/global/img/logopng_salao.png" alt="Salão" height="100">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <a class="navbar-brand" href="#"><img src="/static/global/img/logopng_salao.png" alt="Salão" height="100"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" 
+          aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
@@ -20,24 +17,22 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'unidades' %}">Unidades</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'cadastro' %}">Cadastro</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cadastro</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{% url 'cadastro' %}">Inserir</a></li>
+                <li><a class="dropdown-item" href="{% url 'mostrar' %}">Consultar</a></li>
+              </ul>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Produtos
-              </a>
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Produtos</a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#">Kit de tratamento</a></li>
                 <li><a class="dropdown-item" href="#">Touca</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Serviços
-              </a>
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Serviços</a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#">Escovas</a></li>
                 <li><a class="dropdown-item" href="#">Cronograma</a></li>
@@ -47,8 +42,6 @@
           </ul>
         </div>
       </div>
-      <a href="" data-bs-toggle="modal" data-bs-target="#exampleModallogin">
-        <img id="login" src="/static/global/img/login.jfif">
-      </a>
+      <a href="" data-bs-toggle="modal" data-bs-target="#exampleModallogin"><img id="login" src="/static/global/img/login.jfif"></a>
     </nav>
   </header>

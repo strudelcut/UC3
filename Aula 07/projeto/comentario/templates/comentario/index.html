@@ -1,0 +1,53 @@
+{% extends "global/base.html" %}
+
+{% block formulario %}
+
+<section id="comentario">
+
+    <h1 class="display-3">Comentários</h1>
+
+    <form action="{% url  'gravar' %}" method="post">
+        {% csrf_token %}
+        <div class="container col-4 mb-3">
+
+            <div class="mb-3">
+                <label for="nome" class="form-label">Nome:</label>
+                <input type="text" class="form-control" name="nome">
+                <label for="comentario" class="form-label">Comentário (descrição):</label>
+                <input type="text" class="form-control" name="descricao">
+
+            </div>
+
+            <div class="mb-3 text-center">
+                <button type="submit" class="btn btn-danger">Enviar</button>
+
+            </div>
+        </div>
+
+
+    </form>
+
+    <div class="container col-4 mb-3">
+
+        <table class="table table-striped table-bordered">
+
+            <thead class="text-center">
+
+                <th>Nome</th>
+                <th>Comentários</th>
+
+            </thead>
+
+            <tbody>
+                {% for comentario in comentarios %}
+                <tr>
+                    <td>{{comentario.nome}}</td>
+                    <td>{{comentario.descricao}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+</section>
+{% endblock formulario %}

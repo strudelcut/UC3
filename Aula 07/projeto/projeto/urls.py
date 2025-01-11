@@ -29,4 +29,5 @@ urlpatterns = [
     path('home/', include('home.urls')),
     path('unidades/', include('unidades.urls')),
     path('cadastro/', include('cadastro.urls')),
+    path('comentario/', include('comentario.urls')),
 ]

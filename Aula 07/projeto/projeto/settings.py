@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'home',
     'cadastro',
     'unidades',
+    'comentario',
 ]
 
 MIDDLEWARE = [

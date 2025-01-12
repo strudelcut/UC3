@@ -4,4 +4,6 @@ from django.db import models
 
 class Remetente(models.Model):
     id = models.AutoField(primary_key=True)
+    nome = models.CharField(max_length=255)
+    email = models.EmailField(max_length=255)
     

@@ -3,22 +3,21 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastre-se em nossa Newsletter</h1>
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Projeto UC-2</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form action="{% url 'novo_registro' %}" method="post">
-            {% csrf_token %}
-            <div class="mb-3">
-              <label for="nome" class="form-label">Nome:</label>
-              <input type="text" class="form-control" name="nome">
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email:</label>
-              <input type="email" class="form-control" name="email">
-            </div>
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
-          </form>
+          <h2 class="lead">Avaliação UC-2</h2>
+          <h3>Professor: Elias <del>Maluco</del> Santos</h3>
+          <figure>
+            <blockquote class="blockquote">
+              <p>O homem não é nada além daquilo que a educação faz dele.</p>
+            </blockquote>
+            <figcaption class="blockquote-footer">
+              Immanuel Kant em <cite title="Source Title">Sobre a Pedagogia</cite>
+            </figcaption>
+          </figure>
+          <h6 class="display-6">Aluno: Adoniran Moraes</h6>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>

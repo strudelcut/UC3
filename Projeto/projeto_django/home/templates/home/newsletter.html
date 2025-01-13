@@ -1,33 +1,38 @@
 {% extends "global/base.html" %}
 {% block texto %}
 
-<main class="container p-3 mb-2 bg-secondary-subtle text-secondary-emphasis">
-    <div class="p-5 invisible"></div>
-    <div class="p-5 invisible"></div>
-    <section>
-        <div class="container col-6 text-center">
-            <h2 class="display-6">Assine nossa Newsletter</h2>
-            <form action="">
-                <div class="row">
-                    <div class="col-md mb-3">
-                        <input type="text" class="form-control form-control-lg" placeholder="Nome">
-                    </div>
-                    <div class="col-md mb-3">
-                        <input type="email" class="form-control form-control-lg" placeholder="E-mail">
-                    </div>
-
-                    <div class="col-md-1 mb-3">
-                        <button type="submit" class="btn btn-outline-danger btn-lg">Assinar</button>
-                    </div>
+    <main class="container p-3 mb-2 bg-secondary-subtle text-secondary-emphasis">
+        <div class="p-5 invisible"></div>
+        <div class="p-5 invisible"></div>
+        <section>
+            <div class="container col-6 text-center">
+                <h6 class="display-6 mb-2">Assine nossa Newsletter</h6>
                 
-                </div>                
-            </form>
-        </div>
-        <div class="p-5 invisible"></div>
-        <div class="p-2 invisible"></div>
-        <div class="p-5 invisible"></div>
-    </section>
+                <form action="{% url "novo_registro" %}" method="post">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md mb-3">
+                            <input type="text" name="nome" class="form-control form-control-lg" placeholder="Nome" required>
+                        </div>
+                        <div class="col-md mb-3">
+                            <input type="email" name="email" class="form-control form-control-lg" placeholder="E-mail" required>
+                        </div>
 
-</main>
+                        <div class="col-md-1 mb-3">
+                            <button type="submit" class="btn btn-outline-danger btn-lg">Assinar</button>
+                        </div>
+                    
+                    </div>
+
+                </form>
+
+            </div>
+            <div class="p-5 invisible"></div>
+            <div class="p-2 invisible"></div>
+            <div class="p-5 invisible"></div>
+            
+        </section>
+
+    </main>
 
 {% endblock %}

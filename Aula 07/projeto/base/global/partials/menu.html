@@ -45,6 +45,29 @@
           </ul>
         </div>
       </div>
-      <a href="" data-bs-toggle="modal" data-bs-target="#exampleModallogin"><img id="login" src="/static/global/img/login.jfif"></a>
+
+      
+{% if user.is_authenticated %}
+
+
+<li class="nav-item">
+  <span class="nav-link active">Usuário: {{ user.get_username }}</span>
+</li>
+<li class="nav-item">
+  <form method="post" action="{% url 'logout' %}" style="display: inline;">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-link nav-link active"
+      style="padding: 0; border: none; background: none; color: inherit; text-decoration: underline;">
+      Logout
+    </button>
+  </form>
+</li>
+{% else %}
+<li class="nav-item">
+  <a class="nav-link active" aria-current="page" href="{% url 'login'%}">Login</a>
+</li>
+{% endif %}
+
+      <!-- <a href="" data-bs-toggle="modal" data-bs-target="#exampleModallogin"><img id="login" src="/static/global/img/login.jfif"></a> -->
     </nav>
   </header>

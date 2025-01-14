@@ -31,3 +31,8 @@ urlpatterns = [
     path('cadastro/', include('cadastro.urls')),
     path('comentario/', include('comentario.urls')),
 ]
+
+urlpatterns += [
+    path("account/", include('django.contrib.auth.urls')),
+]
+

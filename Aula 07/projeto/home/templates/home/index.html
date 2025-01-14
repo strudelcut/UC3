@@ -1,6 +1,14 @@
 {% extends "global/base.html" %}
 
 {% block texto %}
+
+<p>
+  Você visitou esta página {{ num_visitas }}
+  {% if num_visitas == 1 %} vez
+  {% else %} vezes
+  {% endif %}.
+</p>
+
 <article class="container">
     <div class="row">
       <div class="col-12 col-sm-8">

@@ -12,6 +12,9 @@ def home(request):
 def newsletter(request):
     return render(request, 'home/newsletter.html', b)
 
+def cadastro(request):
+    return render(request, 'home/cadastro.html', {'title': 'Cadastro'})
+
 def adicionar(request):
     if request.method == 'POST':
         novo_regsitro = Remetente()

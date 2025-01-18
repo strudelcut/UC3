@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from . models import Remetente, Usuario
 
 # Create your views here.
@@ -51,3 +51,13 @@ def add_cadastro(request):
         novo_cadastro.save()
         return redirect(request.META.get('HTTP_REFERER', '/'))
     return render(request, cadastro(request))
+
+def editar(request, id):
+    usuario = get_object_or_404(Usuario.objects.get(id=id))
+    if request.method == 'POST':
+        usuario.nome = request.POST['nome']
+        usuario.sobrenome = request.POST['sobrenome']
+        usuario.sexo = request.POST['sexo']
+        usuario.cep = request.POST['cep']
+        
+    return render(request, 'editar.html', {'usuario': usuario})

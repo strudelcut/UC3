@@ -15,7 +15,7 @@
                         <div class="mb-3 row">
                             <label for="nome" class="col-sm-3 col-form-label">Nome:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" name="nome">
+                                <input type="text" class="form-control" name="nome" required value="{{ edit.nome }}">
                             </div>
                         </div>
                     </div>
@@ -23,7 +23,7 @@
                         <div class="mb-3 row">
                             <label for="sobrenome" class="col-sm-3 col-form-label">Sobrenome:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" name="sobrenome">
+                                <input type="text" class="form-control" name="sobrenome" required value="{{ edit.sobrenome }}">
                             </div>
                         </div>
                     </div>
@@ -36,11 +36,11 @@
                     <div class="col-md-11 text-start">
                             
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="sexo" id="inlineCheckbox1" value="F">
+                            <input class="form-check-input" type="radio" name="sexo" id="inlineCheckbox1" value="F" checked value="{% if edit.sexo == 'F' %} checked {% endif %}">
                             <label class="form-check-label" for="inlineCheckbox1">Feminino</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="sexo" id="inlineCheckbox2" value="M">
+                            <input class="form-check-input" type="radio" name="sexo" id="inlineCheckbox2" value="M" checked value="{% if edit.sexo == 'M' %} checked {% endif %}">
                             <label class="form-check-label" for="inlineCheckbox2">Masculino</label>
                           </div>
                     </div>
@@ -51,7 +51,7 @@
                         <div class="mb-3 row">
                             <label for="cep" name="cep" class="col-4 col-form-label">CEP:</label>
                             <div class="col-8">
-                                <input type="text" class="form-control" name="cep" id="cep" required pattern="\d{5}-\d{3}" onblur="pesquisacep(this.value);">
+                                <input type="text" class="form-control" name="cep" id="cep" required pattern="\d{5}-\d{3}" value="{{ edit.cep }}" onblur="pesquisacep(this.value);">
                             </div>
                         </div>
                     </div>
@@ -59,7 +59,7 @@
                         <div class="mb-3 row">
                             <label for="rua" name="rua" class="col-1 col-form-label">Rua:</label>
                             <div class="col-11">
-                                <input readonly type="text" class="form-control" name="rua" id="rua" required>
+                                <input readonly type="text" class="form-control" name="rua" id="rua">
                             </div>
                         </div>
                     </div>
@@ -67,7 +67,7 @@
                         <div class="mb-3 row">
                             <label for="numero" name="numero" class="col-1 col-form-label">N°:</label>
                             <div class="col">
-                                <input type="text" class="form-control" name="numero" id="numero" required>
+                                <input type="text" class="form-control" name="numero" id="numero" required value="{{ edit.numero }}">
                             </div>
                         </div>
                     </div>
@@ -77,7 +77,7 @@
                         <div class="mb-3 row">
                             <label for="complemento" name="complemento" class="col-4 col-form-label">Complemento:</label>
                             <div class="col-8">
-                                <input type="text" class="form-control" name="complemento" required>
+                                <input type="text" class="form-control" name="complemento" required value="{{ edit.complemento }}">
                             </div>
                         </div>
                     </div>
@@ -85,7 +85,7 @@
                         <div class="mb-3 row">
                             <label for="bairro" name="bairro" class="col-2 col-form-label">Bairro:</label>
                             <div class="col-10">
-                                <input readonly type="text" class="form-control" name="bairro" id="bairro" required>
+                                <input readonly type="text" class="form-control" name="bairro" id="bairro">
                             </div>
                         </div>
                     </div>
@@ -95,7 +95,7 @@
                         <div class="mb-3 row">
                             <label for="cidade" name="cidade" class="col-1 col-form-label">Cidade:</label>
                             <div class="col-11">
-                                <input readonly type="text" class="form-control" name="cidade" id="cidade" required>
+                                <input readonly type="text" class="form-control" name="cidade" id="cidade">
                             </div>
                         </div>                    
                     </div>
@@ -103,7 +103,7 @@
                         <div class="mb-3 row">
                             <label for="uf" name="uf" class="col-3 col-form-label">UF:</label>
                             <div class="col-9">
-                                <input readonly type="text" class="form-control" name="uf" id="uf" required>
+                                <input readonly type="text" class="form-control" name="uf" id="uf">
                                 <input type="hidden" name="ibge" id="ibge">
                             </div>
                         </div>

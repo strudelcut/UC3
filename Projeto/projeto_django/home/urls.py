@@ -9,4 +9,5 @@ urlpatterns = [
     path('cadastro/', views.cadastro, name='cadastro'),
     path('salvar/', views.add_cadastro, name='salvar'),
     path('mostrar/', views.lista, name='mostrar'),
+    path('editar/<int:id>', views.editar, name='editar'),
 ]

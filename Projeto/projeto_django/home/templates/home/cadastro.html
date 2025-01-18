@@ -3,23 +3,38 @@
 {% block texto %}
 <main class="container p-3 mb-2 bg-secondary-subtle text-secondary-emphasis">
     <section>
-        <div class="container col-6 text-center">
-            <div class="invisible p-5"></div>
-            <h1 class="display-5 mb-3">Cadastre-se</h1>
-            <form action="" method="post">
-                {% csrf_token %}
+        <div class="invisible p-5"></div>
+        <div class="col mb-3 text-center">
+            <H6 class="display-5">Cadastre-se</H6>
+        </div>
+        <form action="{% url "salvar" %}" method="post">
+            {% csrf_token %}
+            <div class="container col-8">
                 <div class="row mb-3">
-                    <div class="col">
-                        <input type="text" name="nome" class="form-control" placeholder="Nome" required>
+                    <div class="col-xl-6">
+                        <div class="mb-3 row">
+                            <label for="nome" class="col-sm-3 col-form-label">Nome:</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="nome">
+                            </div>
+                        </div>
                     </div>
-                    <div class="col">
-                        <input type="text" name="sobrenome" class="form-control" placeholder="Sobrenome" required>
+                    <div class="col-xl-6">
+                        <div class="mb-3 row">
+                            <label for="sobrenome" class="col-sm-3 col-form-label">Sobrenome:</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="sobrenome">
+                            </div>
+                        </div>
                     </div>
-
+                    
                 </div>
                 <div class="row mb-3">
-                    <div class="col text-start">
-                        
+                    <div class="col-md-1">
+                        <p>Sexo:</p>
+                    </div>
+                    <div class="col-md-11 text-start">
+                            
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="sexo" id="inlineCheckbox1" value="F">
                             <label class="form-check-label" for="inlineCheckbox1">Feminino</label>
@@ -30,40 +45,75 @@
                           </div>
                     </div>
                 </div>
+    
                 <div class="row mb-3">
-                    <div class="col-3">
-                        <input type="text" name="cep" id="cep" class="form-control" placeholder="CEP" pattern="\d{5}-\d{3}" onblur="pesquisacep(this.value);">
+                    <div class="col-lg-3">
+                        <div class="mb-3 row">
+                            <label for="cep" name="cep" class="col-4 col-form-label">CEP:</label>
+                            <div class="col-8">
+                                <input type="text" class="form-control" name="cep" id="cep" required pattern="\d{5}-\d{3}" onblur="pesquisacep(this.value);">
+                            </div>
+                        </div>
                     </div>
-                    <div class="col">
-                        <input readonly type="text" name="rua" id="rua" class="form-control" placeholder="Logradouro" required>
+                    <div class="col-lg-7">
+                        <div class="mb-3 row">
+                            <label for="rua" name="rua" class="col-1 col-form-label">Rua:</label>
+                            <div class="col-11">
+                                <input readonly type="text" class="form-control" name="rua" id="rua" required>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-2">
-                        <input type="text" name="numero" class="form-control" placeholder="N°" required>
-                    </div>
-                    <div class="col-3">
-                        <input type="text" name="complemento" class="form-control" placeholder="Complemento">
+                    <div class="col-lg-2">
+                        <div class="mb-3 row">
+                            <label for="numero" name="numero" class="col-1 col-form-label">N°:</label>
+                            <div class="col">
+                                <input type="text" class="form-control" name="numero" id="numero" required>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <div class="col">
-                        <input readonly type="text" name="bairro" id="bairro" class="form-control" placeholder="Bairro" required>
+                    <div class="col-lg-6">
+                        <div class="mb-3 row">
+                            <label for="complemento" name="complemento" class="col-4 col-form-label">Complemento:</label>
+                            <div class="col-8">
+                                <input type="text" class="form-control" name="complemento" required>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col">
-                        <input readonly type="text" name="cidade" id="cidade" class="form-control" placeholder="Cidade" required>
-                    </div>
-                    <div class="col-2">
-                        <input readonly type="text" name="uf" id="uf" class="form-control" placeholder="UF" required>
-                        <input type="hidden" name="ibge" id="ibge" class="form-control hidden" placeholder="IBGE">
+                    <div class="col-lg-6">
+                        <div class="mb-3 row">
+                            <label for="bairro" name="bairro" class="col-2 col-form-label">Bairro:</label>
+                            <div class="col-10">
+                                <input readonly type="text" class="form-control" name="bairro" id="bairro" required>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <div class="col text-end">
-                        <button class="btn btn-outline-primary" type="submit">Enviar</button>
+                    <div class="col-lg-10">
+                        <div class="mb-3 row">
+                            <label for="cidade" name="cidade" class="col-1 col-form-label">Cidade:</label>
+                            <div class="col-11">
+                                <input readonly type="text" class="form-control" name="cidade" id="cidade" required>
+                            </div>
+                        </div>                    
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="mb-3 row">
+                            <label for="uf" name="uf" class="col-3 col-form-label">UF:</label>
+                            <div class="col-9">
+                                <input readonly type="text" class="form-control" name="uf" id="uf" required>
+                                <input type="hidden" name="ibge" id="ibge">
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </form>
-            <div class="invisible p-5"></div>
-        </div>
+                <div class="col mb-3 text-end">
+                    <button type="submit" class="btn btn-outline-primary">Enviar</button>
+                </div>                
+            </div>
+        </form>
     </section>
 
 </main>

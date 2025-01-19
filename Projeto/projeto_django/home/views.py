@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, reverse
 from . models import Remetente, Usuario
 
 # Create your views here.
@@ -53,11 +53,31 @@ def add_cadastro(request):
     return render(request, cadastro(request))
 
 def editar(request, id):
-    usuario = get_object_or_404(Usuario.objects.get(id=id))
+    usuario = Usuario.objects.get(id=id)
     if request.method == 'POST':
         usuario.nome = request.POST['nome']
         usuario.sobrenome = request.POST['sobrenome']
         usuario.sexo = request.POST['sexo']
         usuario.cep = request.POST['cep']
         
-    return render(request, 'editar.html', {'usuario': usuario})
+    return render(request, 'home/editar.html', {'edit': usuario})
+
+def editar_cadastro(request, id):
+    novo_cadastro = Usuario.objects.get(id=id)
+    novo_cadastro.nome = request.POST['nome']
+    novo_cadastro.sobrenome = request.POST['sobrenome']
+    novo_cadastro.sexo = request.POST['sexo']
+    novo_cadastro.cep = request.POST['cep']
+    novo_cadastro.rua = request.POST['rua']
+    novo_cadastro.numero = request.POST['numero']
+    novo_cadastro.complemento = request.POST['complemento']
+    novo_cadastro.bairro = request.POST['bairro']
+    novo_cadastro.cidade = request.POST['cidade']
+    novo_cadastro.uf = request.POST['uf']
+    novo_cadastro.save()
+    return redirect(reverse('mostrar'))
+
+def apagar(request, id):
+    cadastro = Usuario.objects.get(id=id)
+    cadastro.delete()
+    return redirect(reverse('mostrar'))

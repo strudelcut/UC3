@@ -10,4 +10,6 @@ urlpatterns = [
     path('salvar/', views.add_cadastro, name='salvar'),
     path('mostrar/', views.lista, name='mostrar'),
     path('editar/<int:id>', views.editar, name='editar'),
+    path('atualizar/<int:id>', views.editar_cadastro, name='atualizar'),
+    path('apagar/<int:id>', views.apagar, name='apagar'),
 ]

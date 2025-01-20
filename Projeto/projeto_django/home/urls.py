@@ -12,4 +12,7 @@ urlpatterns = [
     path('editar/<int:id>', views.editar, name='editar'),
     path('atualizar/<int:id>', views.editar_cadastro, name='atualizar'),
     path('apagar/<int:id>', views.apagar, name='apagar'),
+    path('sessao/', views.sessao,name='sessao'),
+    path('exibir_valor/', views.exibir_valor, name='exibir_valor'),
+    path('encerrar/', views.encerrar_sessao, name='encerrar'),
 ]

@@ -25,22 +25,48 @@
                         <a href="{% url 'home' %}#conclusao" class="nav-link">Conclusão</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{% url 'tabela' %}" class="nav-link">Tabela</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{% url 'car' %}" class="nav-link">Carrossel e Card</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{% url 'newsletter' %}" class="nav-link">Newsletter</a>
-                    </li>
-                    <li class="nav-item">
                         <a href="" class="nav-link" data-bs-toggle="modal" data-bs-target="#sobre">Sobre</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="{% url 'homev2' %}" target="_blank" class="nav-link">V2</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Mais
+                        </a>
+                        <ul class="dropdown-menu bg-warning-subtle">
+                          <li><a class="dropdown-item" href="{% url 'tabela' %}">Tabela</a></li>
+                          <li><a class="dropdown-item" href="{% url 'car' %}">Carrossel e Card</a></li>
+                          <li><a class="dropdown-item" href="{% url 'newsletter' %}">Newsletter</a></li>
+                          <li><a class="dropdown-item" href="{% url 'cadastro' %}">Cadastrar</a></li>
+                          <li><a class="dropdown-item" href="{% url 'mostrar' %}">Lista de Usuários</a></li>
+                          <li><a class="dropdown-item" href="{% url 'homev2' %}">V2</a></li>
+                        </ul>
                     </li>
+                    {% if user.is_authenticated %}
+
+                    <li class="nav-item">
+                        <span class="nav-link active">Usuário: {{ user.get_username }}</span>
+                    </li>
+                    <li class="nav-item">
+                        <form method="post" action="{% url 'logout' %}" style="display: inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-link nav-link active" style="text-decoration: underline;">
+                            Logout
+                        </button>
+                        </form>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'login'%}"><img
+                            src="/static/global/img/login.jfif" width="30"></a>
+                    </li>
+                    {% endif %}                 
                 </ul>
             </nav>
         </nav>
     </nav>
+    <p class="text-end">
+        Você visitou esta página {{ num_visitas }}
+        {% if num_visitas == 1 %} vez
+        {% else %} vezes
+        {% endif %}.
+    </p>
 </nav>

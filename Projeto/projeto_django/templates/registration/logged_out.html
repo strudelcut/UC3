@@ -1,0 +1,11 @@
+{% extends 'global/base.html' %}
+
+
+{% block texto %}
+<main class="container p-3 mb-2 bg-secondary-subtle text-secondary-emphasis">
+    <p>Desconectado!</p>
+    <a href="{% url 'login'%}">Clique aqui para fazer login novamente.</a>
+    
+</main>
+  
+{% endblock %}

@@ -1,5 +1,7 @@
-from django.shortcuts import render, redirect, reverse
-from . models import Remetente, Usuario
+from django.shortcuts import render, redirect
+from rest_framework import viewsets
+from home.serializers import SerializarImagem
+from . models import Remetente, Usuario, Imagem
 
 # Create your views here.
 
@@ -124,3 +126,14 @@ def encerrar_sessao(request):
 
 
     return exibir_valor(request)
+
+
+class ImagemViewSet(viewsets.ModelViewSet):
+    queryset = Imagem.objects.all()
+    serializer_class = SerializarImagem
+
+
+def imagens(request):
+    exibe_imagens = {'imagens' : Imagem.objects.all()}
+    return render(request, 'home/index.html', exibe_imagens)
+

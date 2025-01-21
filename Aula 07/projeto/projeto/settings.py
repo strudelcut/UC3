@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'cadastro',
     'unidades',
     'comentario',
+    'produto',
 ]
 
 MIDDLEWARE = [
@@ -126,7 +127,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
-    # BASE_DIR / 'base' / 'static'
+    BASE_DIR / 'base' / 'static',
     os.path.join(BASE_DIR, 'base/static')
 ]
 
@@ -139,3 +140,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = '/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
+MEDIA_URL = '/media/'

@@ -16,12 +16,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls.static import static
+from django.contrib.auth.views import LoginView
+from django.conf import settings
+from rest_framework import routers
+from produto.views import TopicoViewSet
 
 # Importação da biblioteca http.
 # from home import views as views_home
 # from blog import views as views_blog
 # from contato import views as views_contato
 
+router = routers.DefaultRouter()
+router.register('blog',TopicoViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,9 +37,12 @@ urlpatterns = [
     path('unidades/', include('unidades.urls')),
     path('cadastro/', include('cadastro.urls')),
     path('comentario/', include('comentario.urls')),
+    path('produto/', include('produto.urls')),
 ]
 
 urlpatterns += [
     path("account/", include('django.contrib.auth.urls')),
 ]
+
+urlpatterns+= static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

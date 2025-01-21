@@ -25,3 +25,12 @@ class Usuario(models.Model):
 
     def __str__(self):
         return f'{self.id} - {self.nome} {self.sobrenome}'
+    
+
+class Imagem(models.Model):
+    id = models.AutoField(primary_key=True)
+    imagem = models.ImageField()
+    descricao = models.TextField(max_length=255, blank=True, null=True)
+
+    def __str__(self):
+        return self.DoesNotExist

@@ -66,16 +66,45 @@
 
     </section>
 
-    <section id="cartões">
-        {% for imagem in imagens %}
-        <div class="card" style="width: 18rem;">
-            <img src="{{ imagem.imagem.url}}" class="card-img-top" alt="{{ imagem.descricao }}">
-            <div class="card-body">
-                <p class="card-text">{{ imagem.descricao }}</p>
+    <section id="cartoes" class="row">
+        <div class="col-xl-6 mb-3 mb-sm-0">
+            <div class="card" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="/static/global/img/socket_am4.jpg" class="img-fluid rounded-start" alt="AM4">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Soquete AM4</h5>
+                            <p class="card-text">AM4 é um socket de microprocessador do padrão PGA usado pela AMD em
+                                unidades centrais de processamento (CPUs) construído para microarquiteturas Zen
+                                (incluindo Zen +, Zen 2 e Zen 3) e Excavator.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        
-        {% endfor %}
+        <div class="col-xl-6 mb-3 mb-sm-0">
+            <div class="card" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="/static/global/img/amd_am5.png" class="img-fluid rounded-start" alt="AM5">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Soquete AM5</h5>
+                            <p class="card-text">Socket AM5 (LGA 1718) é um soquete de CPU flip chip land grid array
+                                (LGA) de forçade inserção zero projetado pela Advanced Micro Devices, que é usado
+                                para
+                                microprocessadores AMD Ryzen começando com a microarquitetura Zen 4. AM5 substitui o
+                                socket AM4 e é o primeiro soquete LGA da AMD projetado para CPUs comuns e não
+                                entusiastas</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 </main>
 {% endblock texto %}

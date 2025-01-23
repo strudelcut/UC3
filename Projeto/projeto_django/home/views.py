@@ -1,7 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from rest_framework import viewsets
 from home.serializers import SerializarImagem
-from . models import Remetente, Usuario, Imagem
+from home.models import Remetente, Usuario, Imagem
 
 # Create your views here.
 
@@ -133,7 +133,8 @@ class ImagemViewSet(viewsets.ModelViewSet):
     serializer_class = SerializarImagem
 
 
-def imagens(request):
-    exibe_imagens = {'imagens' : Imagem.objects.all()}
-    return render(request, 'home/index.html', exibe_imagens)
+def home(request):
+    exibir_imagem = {'imagens' : Imagem.objects.get(id=1)}
+    # print(exibir_imagem['imagens'].imagem)  # Aqui você está imprimindo o conteúdo de imagens.imagem no console
+    return render(request, 'home/index.html', exibir_imagem)
 

@@ -33,4 +33,4 @@ class Imagem(models.Model):
     descricao = models.TextField(max_length=255, blank=True, null=True)
 
     def __str__(self):
-        return self.DoesNotExist
+        return f'{self.id} - {self.imagem} - {self.descricao}'

@@ -67,15 +67,19 @@
     </section>
 
     <section id="cartões">
-        {% for imagem in imagens %}
-        <div class="card" style="width: 18rem;">
-            <img src="{{ imagem.imagem.url}}" class="card-img-top" alt="{{ imagem.descricao }}">
-            <div class="card-body">
-                <p class="card-text">{{ imagem.descricao }}</p>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            {% for imagem in imagens %}
+            <div class="col">
+                <div class="card">
+                    <img src="{{ imagem.imagem.url }}" class="card-img-top" alt="{{ imagem.descricao }}">
+                    <div class="card-body text-center">
+                        {% comment %} <h5 class="card-title">Card title</h5> {% endcomment %}
+                        <p class="card-text">{{ imagem.descricao }}</p>
+                    </div>
+                </div>
             </div>
-        </div>
-        
-        {% endfor %}
+            {% endfor %}
+        </div>        
     </section>
 </main>
 {% endblock texto %}

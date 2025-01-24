@@ -1,7 +1,7 @@
 {% extends "global/base.html" %}
 {% block texto %}
 <main class="container p-3 mb-2 bg-secondary-subtle text-secondary-emphasis">
-    <section id="carrossel" class="d-flex justify-content-center mb-3">
+    <section id="carrossel" class="d-flex justify-content-center mb-5">
         <div id="carouselExampleCaptions" style="max-width: 540px;" class="carousel slide">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
@@ -70,7 +70,7 @@
         <div class="row row-cols-1 row-cols-md-3 g-4">
             {% for imagem in imagens %}
             <div class="col">
-                <div class="card">
+                <div class="card border-primary">
                     <img src="{{ imagem.imagem.url }}" class="card-img-top" alt="{{ imagem.descricao }}">
                     <div class="card-body text-center">
                         {% comment %} <h5 class="card-title">Card title</h5> {% endcomment %}

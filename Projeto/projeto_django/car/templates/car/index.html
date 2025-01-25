@@ -75,6 +75,9 @@
                     <div class="card-body text-center">
                         {% comment %} <h5 class="card-title">Card title</h5> {% endcomment %}
                         <p class="card-text">{{ imagem.descricao }}</p>
+                        <button type="button" class="btn btn-success" onclick="window.location.href='{% url 'adicionar_ao_carrinho' imagem.id %}'">
+                            Adicionar ao Carrinho
+                        </button>
                     </div>
                 </div>
             </div>

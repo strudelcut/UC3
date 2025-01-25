@@ -31,6 +31,7 @@ class Imagem(models.Model):
     id = models.AutoField(primary_key=True)
     imagem = models.ImageField()
     descricao = models.TextField(max_length=255, blank=True, null=True)
+    preco = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
 
     def __str__(self):
-        return f'{self.id} - {self.imagem} - {self.descricao}'
+        return f'{self.id} - {self.imagem} - {self.descricao} - {self.preco}'

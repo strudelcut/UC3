@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'tabela',
     'car',
     'homev2',
+    'carrinho',
 ]
 
 MIDDLEWARE = [

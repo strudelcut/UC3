@@ -38,6 +38,7 @@ urlpatterns = [
     path('cadastro/', include('cadastro.urls')),
     path('comentario/', include('comentario.urls')),
     path('produto/', include('produto.urls')),
+    path('carrinho/', include('carrinho.urls')),
 ]
 
 urlpatterns += [

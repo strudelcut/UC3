@@ -12,13 +12,29 @@ def adicionar_ao_carrinho(request, produto_id):
     item.save()
     return redirect('carrinho')
 
+def adicionar_ao_carrinhoV2(request, produto_id):
+    produto = Imagem.objects.get(id=produto_id)
+    item, created = ItemCarrinho.objects.get_or_create(produto=produto)
+    if not created:
+        item.quantidade += 1
+    item.save()
+    return redirect('carrinhov2')
+
 def exibir_carrinho(request):
     itens = ItemCarrinho.objects.all()
     total = 0
     for item in itens:
         item.total_preco = item.produto.preco * item.quantidade
         total += item.total_preco
-    return render(request, 'carrinho/index.html', {'itens': itens,'total': total}) 
+    return render(request, 'carrinho/index.html', {'itens': itens,'total': total})
+
+def exibir_carrinhoV2(request):
+    itens = ItemCarrinho.objects.all()
+    total = 0
+    for item in itens:
+        item.total_preco = item.produto.preco * item.quantidade
+        total += item.total_preco
+    return render(request, 'carrinho/carrinho.html', {'itens': itens,'total': total}) 
 
 import urllib.parse  
 def finalizar_compra(request):
@@ -42,3 +58,14 @@ def remover_do_carrinho(request, produto_id):
         else:
             item.delete()
     return redirect('carrinho')
+
+def remover_do_carrinhoV2(request, produto_id):
+    itens = ItemCarrinho.objects.filter(id=produto_id)
+    if itens.exists():
+        item = itens.first()
+        if item.quantidade > 1:
+            item.quantidade -= 1
+            item.save()
+        else:
+            item.delete()
+    return redirect('carrinhov2')

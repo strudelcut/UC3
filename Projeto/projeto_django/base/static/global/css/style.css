@@ -27,3 +27,8 @@ table {
 h5 {
     text-align: center;
 }
+
+.custom-radio .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #ffc107;
+    border-color: #ffc107;
+}

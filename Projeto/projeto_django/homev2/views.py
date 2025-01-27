@@ -1,17 +1,22 @@
 from django.shortcuts import render, redirect, reverse
 from rest_framework import viewsets
 from home.serializers import SerializarImagem
-from home.models import Remetente, Usuario, Imagem
+from home.models import Usuario, Imagem
 
 # Create your views here.
 # a = {'title': 'Home V2 - Blog'}
 # b = {'title': 'Soquetes'}
 
+class ImagemViewSet(viewsets.ModelViewSet):
+    queryset = Imagem.objects.all()
+    serializer_class = SerializarImagem
+    
 def homev2(request):
     return render(request, 'homev2/index.html', {'title': 'Home V2 - Blog'})
 
 def soquetes(request):
-    return render(request, 'homev2/soquetes.html', {'title': 'Soquetes'})
+    a = {'title': 'Soquetes - Processadores', 'imagens' : Imagem.objects.all()}
+    return render(request, 'homev2/soquetes.html', a)
 
 def newsletterV2(request):
     return render(request, 'homev2/newsletter.html', {'title': 'Newsletter'})

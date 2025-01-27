@@ -1713,9 +1713,9 @@ section,
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
-}
+/* .starter-section {
+  Add your styles here
+} */
 
 .custom-radio .custom-control-input:checked ~ .custom-control-label::before {
   background-color: #ffc107;

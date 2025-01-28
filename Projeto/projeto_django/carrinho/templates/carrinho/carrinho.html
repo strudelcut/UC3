@@ -1,17 +1,17 @@
 {% extends "global/basev2.html" %}
 {% block texto %}
 <main class="main">
-    <section id="home" class="hero section dark-background">
+    <section class="hero section dark-background">
         <div class="container">
             <h1>Seu Carrinho</h1>
-            <table class="table">
+            <table class="align-middle table table-dark text-center ">
                 <thead>
                     <tr>
-                        <th>Produto</th>
-                        <th>Quantidade</th>
-                        <th>Preço Unitário</th>
-                        <th>Total</th>
-                        <th>Ações</th>
+                        <th class="text-warning">Produto</th>
+                        <th class="text-warning">Quantidade</th>
+                        <th class="text-warning">Preço Unitário</th>
+                        <th class="text-warning">Total</th>
+                        <th class="text-warning">Ações</th>
                     
                     </tr>
                 </thead>
@@ -20,12 +20,12 @@
         
                     {% for item in itens %}
                     <tr>
-                        <td>{{ item.produto.tema }}</td>
+                        <td>{{ item.produto.descricao }}</td>
                         <td>{{ item.quantidade }}</td>
                         <td>R$ {{ item.produto.preco }}</td>
                         <td>R$ {{ item.total_preco }}</td>
                         <td>
-                            <a href="{% url 'remover_do_carrinhov2' item.id %}" class="btn btn-danger">
+                            <a href="{% url 'remover_do_carrinhov2' item.id %}" class="btn btn-outline-danger btn-sm">
                                 Remover
                             </a>
                         </td>
@@ -35,7 +35,7 @@
                 </tbody>
             </table>
             <h3>Total: R$ {{ total }}</h3>
-            <a href="{% url 'finalizar_compra' %}" class="btn btn-warning">Finalizar Compra</a>
+            <a href="{% url 'finalizar_compra' %}" class="btn btn-warning me-3">Finalizar Compra</a>
             <a href="{% url 'soquetes' %}#cartoes" class="btn btn-warning">Adicionar mais itens</a>
         </div>
     </section>

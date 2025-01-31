@@ -1,9 +1,11 @@
-{% extends 'global/base.html' %}
+{% extends 'global/basev2.html' %}
 
 
 {% block texto %}
 
-    <main class="container p-3 mb-2 bg-secondary-subtle text-secondary-emphasis">
+<main class="main">
+    <section id="home" class="hero section dark-background">
+
         {% if form.errors %}
         <p>Seu nome de usuário e senha não correspondem. Por favor, tente novamente.</p>
         {% endif %}
@@ -41,5 +43,6 @@
         </form>
 
 
-    </main>
+    </section>
+</main>
 {% endblock texto %}

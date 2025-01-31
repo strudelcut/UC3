@@ -1,10 +1,13 @@
-{% extends 'global/base.html' %}
+{% extends 'global/basev2.html' %}
 
 
 {% block texto %}
-<main class="container p-3 mb-2 bg-secondary-subtle text-secondary-emphasis">
-    <p>Desconectado!</p>
-    <a href="{% url 'login'%}">Clique aqui para fazer login novamente.</a>
+<main class="main">
+    <section id="home" class="hero section dark-background">
+        <p>Desconectado!</p>
+        <a href="{% url 'login'%}">Clique aqui para fazer login novamente.</a>
+    </section>
+    
     
 </main>
   
